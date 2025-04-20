@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ARCHANA ENTERPRISES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .about-detail {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .company-image {
+            position: relative;
+        }
+
+        .company-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .company-info h1 {
+            color: #1b8a3d;
+            margin-bottom: 20px;
+        }
+
+        .company-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .highlights-list {
+            margin: 20px 0;
+        }
+
+        .highlights-list li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .highlights-list li:before {
+            content: "•";
+            color: #1b8a3d;
+            position: absolute;
+            left: 0;
+        }
+
+        .company-values {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="products/strapping-machines.html">Strapping Machines</a>
+                        <a href="products/pp-box-straping-rolls.html">PP Box Straping Rolls</a>
+                        <a href="products/pneumatic-strapping-tool.html">Pneumatic Strapping Tool</a>
+                        <a href="products/bop-tape-roll.html">Bop Tape Roll</a>
+                        <a href="products/polyolefin-shrink-film-roll.html">Polyolefin Shrink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .catalog-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .catalog-card img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .catalog-card h2 {
+            color: #28a745;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .catalog-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="catalog-container">
+        <div class="catalog-card">
+            <img src="strapping-machines.png" alt="Strapping Machines">
+            <h2>Strapping Machines</h2>
+            <p>Complete guide for our strapping machine range</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="catalog-card">
+            <img src="pp-box-straping.png" alt="PP Box Straping Rolls">
+            <h2>PP Box Straping Rolls (Printed)</h2>
+            <p>Detailed specifications for strapping rolls</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="catalog-card">
+            <img src="pneumatic-tool.png" alt="Pneumatic Strapping Tool">
+            <h2>Pneumatic-Strapping Tool</h2>
+            <p>Complete guide for pneumatic strapping tools</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="catalog-card">
+            <img src="bop-tape.png" alt="Bop Tape Roll">
+            <h2>Bop Tape Roll</h2>
+            <p>Specifications and applications of Bop Tape Rolls</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="catalog-card">
+            <img src="polyolefin.png" alt="Polyolefin Shirink Film Roll">
+            <h2>Polyolefin Shirink Film Roll</h2>
+            <p>Complete guide for Polyolefin Shrink Film products</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="catalog-card">
+            <img src="company-brochure.png" alt="Company Brochures">
+            <h2>Company Brochures</h2>
+            <p>Comprehensive overview of our company products and services</p>
+            <a href="#" class="download-btn">Download PDF</a>
+        </div>
+    </div>
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/your_channel_id" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer></body>
+</html>

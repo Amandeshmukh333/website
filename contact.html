@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ARCHANA ENTERPRISES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Add the about and company styles */
+        .about-detail {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        header {
+            background-color: #1b8a3d;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            padding: 30px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            color: #1b8a3d;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            color: #000; /* Added black color */
+        }
+
+        .info-item h4 {
+            color: #1b8a3d;
+            margin-bottom: 5px;
+        }
+
+        .info-item a {
+            color: #000; /* Added black color for links */
+            text-decoration: none;
+        }
+
+        .contact-form {
+            padding: 30px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .submit-btn {
+            background-color: #1b8a3d;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #156830;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+
+        /* Keep your existing contact styles */
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            padding: 30px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            color: #1b8a3d;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h4 {
+            color: #1b8a3d;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            padding: 30px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .submit-btn {
+            background-color: #1b8a3d;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #156830;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="products/strapping-machines.html">Strapping Machines</a>
+                        <a href="products/pp-box-straping-rolls.html">PP Box Straping Rolls</a>
+                        <a href="products/pneumatic-strapping-tool.html">Pneumatic Strapping Tool</a>
+                        <a href="products/bop-tape-roll.html">Bop Tape Roll</a>
+                        <a href="products/polyolefin-shrink-film-roll.html">Polyolefin Shrink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            background-color: #1b8a3d;
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+
+    <script>
+        let lastScroll = 0;
+        let scrollDirection = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const scrollDifference = currentScroll - lastScroll;
+            
+            scrollDirection = (scrollDirection * 0.8) + (scrollDifference * 0.2);
+            
+            if (currentScroll <= scrollThreshold) {
+                header.style.transform = 'translateY(0)';
+            } else if (Math.abs(scrollDirection) > 2) {
+                const translateY = Math.max(-100, Math.min(0, -scrollDirection));
+                header.style.transform = `translateY(${translateY}%)`;
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 60) {
+                header.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>ARCHANA ENTERPRISES</h3>
+            <div class="info-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="info-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="info-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="info-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+            <div class="info-item">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Subject <span class="required">*</span></label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label>Message <span class="required">*</span></label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Name <span class="required">*</span></label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label>Mobile <span class="required">*</span></label>
+                    <input type="tel" id="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea id="address"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const mobile = document.getElementById('mobile').value;
+            const address = document.getElementById('address').value;
+
+            // Prepare message content
+            const messageContent = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMobile: ${mobile}\nAddress: ${address}\n\nSubject: ${subject}\n\nMessage: ${message}`;
+
+            // WhatsApp message
+            const whatsappNumber = "919767859841";
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageContent)}`;
+            window.open(whatsappUrl, '_blank');
+
+            // Email message
+            const emailSubject = encodeURIComponent(subject);
+            const emailBody = encodeURIComponent(messageContent);
+            const mailtoUrl = `mailto:archana_ent@hotmail.com?subject=${emailSubject}&body=${emailBody}`;
+            window.location.href = mailtoUrl;
+        }
+    </script>
+
+    <!-- Add Footer -->
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/your_channel_id" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

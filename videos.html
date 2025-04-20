@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - ARCHANA ENTERPRISES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Update header to match other pages */
+        header {
+            background-color: #1b8a3d;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .video-item {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            color: #1b8a3d;
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .video-description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Add Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="products/strapping-machines.html">Strapping Machines</a>
+                        <a href="products/pp-box-straping-rolls.html">PP Box Straping Rolls</a>
+                        <a href="products/pneumatic-strapping-tool.html">Pneumatic Strapping Tool</a>
+                        <a href="products/bop-tape-roll.html">Bop Tape Roll</a>
+                        <a href="products/polyolefin-shrink-film-roll.html">Polyolefin Shrink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            background-color: #1b8a3d;
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+
+    <script>
+        let lastScroll = 0;
+        let scrollDirection = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const scrollDifference = currentScroll - lastScroll;
+            
+            scrollDirection = (scrollDirection * 0.8) + (scrollDifference * 0.2);
+            
+            if (currentScroll <= scrollThreshold) {
+                header.style.transform = 'translateY(0)';
+            } else if (Math.abs(scrollDirection) > 2) {
+                const translateY = Math.max(-100, Math.min(0, -scrollDirection));
+                header.style.transform = `translateY(${translateY}%)`;
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 60) {
+                header.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+
+    <div class="video-container">
+        <div class="video-grid">
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/93mBjaHvc9w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Strapping Machine Demo</h3>
+                <p class="video-description">Watch our fully automatic strapping machine in action, demonstrating its efficiency and reliability in packaging operations.</p>
+            </div>
+
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/93mBjaHvc9w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Sealing Machine Operation</h3>
+                <p class="video-description">See how our carton sealing machine delivers consistent and professional results in this detailed demonstration.</p>
+            </div>
+
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/93mBjaHvc9w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Strapping Tool Guide</h3>
+                <p class="video-description">Learn how to properly use our PET strapping tool for maximum efficiency and optimal results.</p>
+            </div>
+
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/93mBjaHvc9w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Stretch Wrapping Tutorial</h3>
+                <p class="video-description">Complete tutorial on operating our stretch wrapping machine for perfect pallet wrapping every time.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Footer -->
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/your_channel_id" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

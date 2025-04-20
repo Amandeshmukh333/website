@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company History - ARCHANA ENTERPRISES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .company-history {
+            padding: 100px 20px;
+            background: #f0f2f5;
+            min-height: 100vh;
+        }
+
+        .history-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .history-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #1b8a3d;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .history-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .milestone {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .milestone.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .milestone-header {
+            background: linear-gradient(135deg, #1b8a3d, #2cb55a);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .year-badge {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .milestone-content {
+            padding: 30px;
+        }
+
+        .milestone h3 {
+            color: #1b8a3d;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .milestone h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #1b8a3d;
+            margin-top: 10px;
+        }
+
+        .milestone p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .milestone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(27, 138, 61, 0.1), rgba(44, 181, 90, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .milestone:hover::before {
+            opacity: 1;
+        }
+
+        .milestone:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .company-history {
+                padding: 60px 15px;
+            }
+
+            .history-title {
+                font-size: 2.2rem;
+            }
+
+            .history-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="products/strapping-machines.html">Strapping Machines</a>
+                        <a href="products/pp-box-straping-rolls.html">PP Box Straping Rolls</a>
+                        <a href="products/pneumatic-strapping-tool.html">Pneumatic Strapping Tool</a>
+                        <a href="products/bop-tape-roll.html">Bop Tape Roll</a>
+                        <a href="products/polyolefin-shrink-film-roll.html">Polyolefin Shrink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            background-color: #1b8a3d;
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+
+    <script>
+        let lastScroll = 0;
+        let scrollDirection = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const scrollDifference = currentScroll - lastScroll;
+            
+            scrollDirection = (scrollDirection * 0.8) + (scrollDifference * 0.2);
+            
+            if (currentScroll <= scrollThreshold) {
+                header.style.transform = 'translateY(0)';
+            } else if (Math.abs(scrollDirection) > 2) {
+                const translateY = Math.max(-100, Math.min(0, -scrollDirection));
+                header.style.transform = `translateY(${translateY}%)`;
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 60) {
+                header.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+
+    <section class="company-history">
+        <div class="history-container">
+            <h1 class="history-title">Our Legacy</h1>
+            <p class="history-subtitle">From humble beginnings to industry leadership, explore the remarkable journey of ARCHANA ENTERPRISES in revolutionizing packaging solutions.</p>
+            
+            <div class="timeline">
+                <div class="milestone">
+                    <div class="milestone-header">
+                        <span class="year-badge">1995</span>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Company Foundation</h3>
+                        <p>ARCHANA ENTERPRISES was established with a vision to revolutionize the packaging industry. Starting with a small team of dedicated professionals, we set out to create innovative solutions for businesses.</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-header">
+                        <span class="year-badge">2000</span>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Product Line Expansion</h3>
+                        <p>Introduced automated strapping machines and expanded our product portfolio. This marked a significant milestone in our journey towards becoming a comprehensive packaging solution provider.</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-header">
+                        <span class="year-badge">2010</span>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>International Market Entry</h3>
+                        <p>Expanded operations to international markets and established global partnerships. Our commitment to quality and innovation helped us build strong relationships with clients worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-header">
+                        <span class="year-badge">2015</span>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Innovation Award</h3>
+                        <p>Received industry recognition for innovative packaging solutions and customer service excellence. This achievement reinforced our position as a leader in the packaging industry.</p>
+                    </div>
+                </div>
+
+            <div class="milestone">
+                <div class="milestone-header">
+                    <span class="year-badge">2018</span>
+                </div>
+                <div class="milestone-content">
+                    <h3>Digital Transformation</h3>
+                    <p>Implemented state-of-the-art digital solutions and automated manufacturing processes, setting new industry standards for efficiency and precision in packaging solutions.</p>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="milestone-header">
+                    <span class="year-badge">2022</span>
+                </div>
+                <div class="milestone-content">
+                    <h3>Sustainability Initiative</h3>
+                    <p>Launched eco-friendly packaging solutions and implemented green manufacturing practices, demonstrating our commitment to environmental sustainability and responsible business practices.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/your_channel_id" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const milestones = document.querySelectorAll('.milestone');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        milestones.forEach((milestone, index) => {
+            setTimeout(() => {
+                observer.observe(milestone);
+            }, index * 200);
+        });
+    </script>
+</body>
+</html>

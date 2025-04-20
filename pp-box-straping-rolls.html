@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP Box Straping Rolls - ARCHANA ENTERPRISES</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .product-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: #1b8a3d;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .product-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .specs {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .specs li {
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #1b8a3d;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="../index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="../images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="../about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="../about.html">About Us</a>
+                        <a href="../history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="strapping-machines.html">Strapping Machines</a>
+                        <a href="pp-box-straping-rolls.html">PP Box Straping Rolls</a>
+                        <a href="pneumatic-strapping-tool.html">Pneumatic Strapping Tool</a>
+                        <a href="bop-tape-roll.html">Bop Tape Roll</a>
+                        <a href="polyolefin-shrink-film-roll.html">Polyolefin Shrink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="../catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="../videos.html">VIDEOS</a></li>
+                <li><a href="../contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            background-color: #1b8a3d;
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+
+    <script>
+        let lastScroll = 0;
+        let scrollDirection = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const scrollDifference = currentScroll - lastScroll;
+            
+            scrollDirection = (scrollDirection * 0.8) + (scrollDifference * 0.2);
+            
+            if (currentScroll <= scrollThreshold) {
+                header.style.transform = 'translateY(0)';
+            } else if (Math.abs(scrollDirection) > 2) {
+                const translateY = Math.max(-100, Math.min(0, -scrollDirection));
+                header.style.transform = `translateY(${translateY}%)`;
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 60) {
+                header.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+
+    <section class="product-section">
+        <h1 class="page-title">PP Box Straping Rolls</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="../images/strapping-roll-1.jpg" alt="5mm PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>5mm PP Strapping Roll</h3>
+                    <p>High-quality polypropylene strapping roll ideal for light-duty packaging applications.</p>
+                    <ul class="specs">
+                        <li>Width: 5mm</li>
+                        <li>Breaking Strength: 50kg</li>
+                        <li>Length: 5000m</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/strapping-roll-2.jpg" alt="9mm PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>9mm PP Strapping Roll</h3>
+                    <p>Medium-duty strapping roll perfect for carton and box packaging.</p>
+                    <ul class="specs">
+                        <li>Width: 9mm</li>
+                        <li>Breaking Strength: 120kg</li>
+                        <li>Length: 4000m</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/strapping-roll-3.jpg" alt="12mm PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>12mm PP Strapping Roll</h3>
+                    <p>Heavy-duty strapping solution for industrial packaging needs.</p>
+                    <ul class="specs">
+                        <li>Width: 12mm</li>
+                        <li>Breaking Strength: 180kg</li>
+                        <li>Length: 3000m</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/strapping-roll-4.jpg" alt="15mm PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>15mm PP Strapping Roll</h3>
+                    <p>Extra-strong strapping roll for heavy-duty industrial applications.</p>
+                    <ul class="specs">
+                        <li>Width: 15mm</li>
+                        <li>Breaking Strength: 250kg</li>
+                        <li>Length: 2500m</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/strapping-roll-5.jpg" alt="Colored PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>Colored PP Strapping Roll</h3>
+                    <p>Available in multiple colors for brand-specific packaging requirements.</p>
+                    <ul class="specs">
+                        <li>Width: 12mm</li>
+                        <li>Colors: Blue, Red, Green</li>
+                        <li>Length: 3000m</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/strapping-roll-6.jpg" alt="Premium PP Strapping Roll" class="product-image">
+                <div class="product-info">
+                    <h3>Premium PP Strapping Roll</h3>
+                    <p>High-end strapping solution with superior tensile strength and durability.</p>
+                    <ul class="specs">
+                        <li>Width: 12mm</li>
+                        <li>Breaking Strength: 200kg</li>
+                        <li>Length: 3500m</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p><a href="tel:+919767859841" class="contact-link"><i class="fas fa-phone"></i> +91 9767859841</a></p>
+                <p><a href="tel:+919284185709" class="contact-link"><i class="fas fa-phone"></i> +91 9284185709</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>WHATSAPP</h4>
+                <p><a href="https://wa.me/919767859841" class="contact-link"><i class="fab fa-whatsapp"></i> +91 9767859841</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p><a href="mailto:archana_ent@hotmail.com" class="contact-link"><i class="fas fa-envelope"></i> archana_ent@hotmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p><a href="https://maps.google.com/?q=Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52" target="_blank" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Plot No. 45, Sr. No. 115/7/8 2/2, Audumber Society (B), Karve Nagar, Pune - 52
+                </a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/your_channel_id" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

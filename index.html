@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHANA ENTERPRISES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1b8a3d;  /* Changed to green */
+            padding: 1.5rem;  /* Increased padding */
+            color: white;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;  /* Increased horizontal padding */
+        }
+
+        .logo {
+            font-size: 32px;  /* Increased font size */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            display: block;  /* Added to ensure proper rendering */
+            max-width: 100%;  /* Added to prevent overflow */
+        }
+
+        .logo span {
+            font-size: 20px !important;
+            margin-left: 15px !important;
+        }
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            font-size: 20px !important;  /* Increased font size */
+            margin-left: 15px !important;  /* Increased margin */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            position: relative;  /* Added */
+        }
+
+        .dropdown {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 220px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            margin-top: 0;  /* Reduced margin */
+            border-radius: 4px;
+            transition: all 0.3s ease;  /* Added smooth transition */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content::before {
+            content: '';
+            position: absolute;
+            top: -20px;  /* Added padding area for smoother hover */
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        .dropdown-content a {
+            color: #333 !important;
+            padding: 12px 20px;
+            display: block;
+            font-size: 14px !important;
+            font-weight: normal !important;
+            text-transform: none;
+            transition: background-color 0.2s ease;  /* Smooth hover effect */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Add arrow indicator */
+        .nav-link::after {
+            content: '▼';
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 10px;
+            vertical-align: middle;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;  /* Added font size */
+            font-weight: 500;  /* Added font weight */
+        }
+
+        .industry-section {
+            background-color: #1b8a3d;  /* Changed to green */
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .industry-description {
+            max-width: 800px;
+            margin: 2rem auto;
+            line-height: 1.6;
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .industry-item {
+            position: relative;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .industry-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(27, 138, 61, 0.7);  /* Changed to green with opacity */
+        }
+
+        .industry-item span {
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            padding: 3rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-item h4 {
+            color: #1b8a3d;  /* Changed to green */
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #1b8a3d;  /* Changed to green */
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+    <!-- Add this line below your existing meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="AE Logo" class="logo-img">
+                    <span>ARCHANA ENTERPRISES</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="history.html">Company History</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#Products" class="nav-link">PRODUCTS</a>
+                    <div class="dropdown-content">
+                        <a href="#strapping-machines">Strapping Machines</a>
+                        <a href="#PP-Box-Straping-Rolls-(Printed)">PP Box Straping Rolls (Printed)</a>
+                        <a href="#Pneumatic-Strapping-Tool">Pneumatic-Strapping Tool</a>
+                        <a href="#Bop-Tape-Roll">Bop Tape Roll</a>
+                        <a href="#Polyolefin-Shirink-Film-Roll">Polyolefin Shirink Film Roll</a>
+                    </div>
+                </li>
+                <li><a href="catalogs.html">E-CATALOGUES</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Add slider here, after the header -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80" alt="Industrial Packaging">
+                <div class="slide-content">
+                    <h2>Welcome to Archana Enterprises</h2>
+                    <p>Your Complete Packaging Solution</p>
+                </div>
+            </div>
+            <!-- Second Slide - Features -->
+            <div class="slide">
+                <div class="image-grid">
+                    <!-- Update the grid items in the slider section -->
+                    <div class="grid-item">
+                        <img src="images/quality.jpg" alt="Quality Products">
+                        <h3>Quality Products</h3>
+                        <div class="description">
+                            <p>Premium packaging solutions engineered to meet the highest industry standards. Our products ensure reliable and secure packaging for all your needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-item">
+                        <img src="images/innovation.jpg" alt="Innovation">
+                        <h3>Innovation</h3>
+                        <div class="description">
+                            <p>Cutting-edge technology and innovative solutions that keep your packaging process efficient and cost-effective.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-item">
+                        <img src="images/service.jpg" alt="Premium Service">
+                        <h3>Premium Service</h3>
+                        <div class="description">
+                            <p>Dedicated support team ensuring smooth operation and maintenance of your packaging equipment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="image-grid">
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Support">
+                        <h3>24/7 Support</h3>
+                        <div class="description">
+                            <p>Round-the-clock technical support and assistance to ensure your operations run smoothly without interruption.</p>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80" alt="Delivery">
+                        <h3>Fast Delivery</h3>
+                        <div class="description">
+                            <p>Quick and reliable delivery service ensuring your packaging solutions reach you when you need them.</p>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Team">
+                        <h3>Expert Team</h3>
+                        <div class="description">
+                            <p>Highly skilled professionals with years of experience in packaging solutions and technical support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="image-grid">
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80" alt="Success">
+                        <h3>Client Success</h3>
+                        <div class="description">
+                            <p>Proven track record of helping businesses optimize their packaging processes and achieve their goals.</p>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Global">
+                        <h3>Global Reach</h3>
+                        <div class="description">
+                            <p>Serving clients worldwide with international shipping and localized support services.</p>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Leader">
+                        <h3>Industry Leader</h3>
+                        <div class="description">
+                            <p>Setting standards in packaging innovation and customer satisfaction across the industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </div>
+
+    <style>
+        .industries-we-work {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .industries-we-work h2 {
+            color: #1b8a3d;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .industry-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .industry-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .circle-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #1b8a3d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .industry-box p {
+            color: #333;
+            font-weight: 500;
+        }
+
+        @media (max-width: 992px) {
+            .industry-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industry-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .industry-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <section class="feature-products">
+        <h2>FEATURE PRODUCTS</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="images/logo.jpg" alt="Strapping Machine">
+                <h3>Fully Automatic Strapping Machine</h3>
+                <p>Fully automatic box strapping machine uses polypropylene straps, a highly durable and cost-effective material, ensuring secure and reliable packaging. This makes it a go-to solution for industries where packaging speed and reliability are paramount.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/sealing-machine.jpg" alt="Sealing Machine">
+                <h3>Standard Top & Bottom Carton Sealing Machine</h3>
+                <p>This machine automatically applies tape to both the top and bottom of the carton, ensuring a consistent, professional seal every time. It's perfect for businesses looking to speed up their packaging process without compromising the quality of their seal.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/strapping-tool.jpg" alt="Strapping Tool">
+                <h3>Automated Pet Strapping Tool</h3>
+                <p>Strapping tool is designed for its PET straps, which are known for their high strength and durability. It enhances the strapping process by increasing labor productivity and eliminates usage of metal clips for sealing significantly improving both cost and speed.</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="images/stretch-wrapping.jpg" alt="Stretch Wrapping Machine">
+                <h3>Stretch Wrapping Machine</h3>
+                <p>Automates the process of wrapping pallets or other large items with stretch film, ensuring uniform coverage and stabilization. This not only saves time but also reduces material waste, as the machine applies the right amount of film needed to securely wrap each load.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="industries-we-work">
+        <h2>INDUSTRIES WE WORK FOR</h2>
+        <div class="industry-container">
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <p>Textile Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <p>Chemical Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <p>Automobile Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <p>Steel and Aluminium Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <p>Agro Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <p>FMCG Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <p>Logistics and Warehousing Industry</p>
+            </div>
+            <div class="industry-box">
+                <div class="circle-icon">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <p>Pharmaceutical Industry</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>TEL</h4>
+                <p>+886 4 23591858</p>
+            </div>
+            <div class="contact-item">
+                <h4>FAX</h4>
+                <p>+886 4 23590686</p>
+            </div>
+            <div class="contact-item">
+                <h4>EMAIL</h4>
+                <p>packway07@packway.com</p>
+            </div>
+            <div class="contact-item">
+                <h4>ADDRESS</h4>
+                <p>56, 35th Rd. Taichung Ind. Park, Taichung 407, TAIWAN</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#" target="_blank">Line</a>
+            <a href="#" target="_blank">YouTube</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ARCHANA ENTERPRISES All rights reserved.</p>
+            <div>
+                <a href="/sitemap">Sitemap</a> |
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+        .feature-products {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1b8a3d, #157033);
+            color: white;
+            margin-top: 0;
+        }
+
+        .feature-products h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .feature-products h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .product-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-products h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 600px;  /* Fixed height */
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+        }
+
+        .slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* First slide specific styles */
+        .slide:first-child img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        /* Multi-image slides styling */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            height: 100%;
+            background: rgba(27, 138, 61, 0.9);
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .grid-item h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        /* Navigation buttons */
+        .slider-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(27, 138, 61, 0.6);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        .slider-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-nav button:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide {
+            0%, 25% { transform: translateX(0); }
+            33%, 58% { transform: translateX(-33.333%); }
+            66%, 91% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+    <!-- Add this script before the closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentSlide = 0;
+
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 25}%)`;  // Changed from 33.333 to 25
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlider();
+            });
+        });
+    </script>
+</body>
+</html>
+
+/* Update header styles */
+header {
+    background-color: #1b8a3d;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Update feature products section */
+.feature-products {
+    background: #1b8a3d;
+    padding: 6rem 2rem;
+}
+
+/* Update industry section */
+.industries-we-work {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.industries-we-work h2 {
+    color: #1b8a3d;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.circle-icon {
+    width: 100px;
+    height: 100px;
+    background-color: #1b8a3d;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(27, 138, 61, 0.2);
+}
+
+/* Update footer */
+footer {
+    background-color: #1b8a3d;
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.contact-item h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.footer-bottom {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Update product cards */
+.product-card {
+    background: #ffffff;
+    border: 2px solid #1b8a3d;
+    color: #333;
+}
+
+.product-card h3 {
+    color: #1b8a3d;
+}
+
+.product-card p {
+    color: #555;
+}
+
+/* Update navigation */
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-content {
+    background-color: #ffffff;
+    border: 2px solid #1b8a3d;
+}
+
+.dropdown-content a {
+    color: #1b8a3d !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #1b8a3d;
+    color: #ffffff !important;
+}

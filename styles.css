@@ -1,0 +1,953 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1b8a3d;
+    padding: 1.5rem;
+    color: white;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+}
+
+.logo span {
+    font-size: 20px !important;
+    margin-left: 15px !important;
+}
+
+/* Update nav-links and dropdown styles */
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    position: relative;
+    z-index: 9999; /* Higher z-index */
+}
+
+.dropdown {
+    position: relative;
+    z-index: 9999; /* Higher z-index */
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999; /* Higher z-index */
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    border: 1px solid rgba(27, 138, 61, 0.2);
+}
+
+/* Remove the duplicate dropdown-content styles and update the navigation */
+header {
+    position: relative;
+    z-index: 9999;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    position: relative;
+    z-index: 9999;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 9999;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    min-width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    border: 1px solid rgba(27, 138, 61, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ensure slider stays behind */
+.slider-container {
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    margin-top: 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.dropdown-content a {
+    color: #333 !important;
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    text-transform: none;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-link::after {
+    content: '▼';
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.industry-section {
+    background-color: #1b8a3d;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.industry-description {
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.6;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; /* Reduced from 2rem for better spacing */
+    margin-top: 2rem;
+    padding: 0 4rem;
+}
+
+.industry-item {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.industry-item:hover {
+    transform: translateY(-5px); /* Subtle lift effect instead of jumping */
+}
+
+.industry-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Smooth icon transition */
+}
+
+.industry-item:hover img {
+    transform: scale(1.1); /* Subtle icon scale on hover */
+}
+
+.industry-item span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Remove all other .industry-item related styles below this point */
+.industry-item:hover span {
+    color: white;
+}
+.industry-item {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.industry-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(27, 138, 61, 0.7);
+}
+
+.industry-item span {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+footer {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1b8a3d;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.contact-item p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: white;
+    color: #1b8a3d;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1b8a3d;
+    border-radius: 10px;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    padding: 1.5rem;
+}
+
+
+.slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+
+.slide:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    color: white;
+    z-index: 2;
+}
+
+.main-text {
+    text-align: right;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 600px;
+}
+
+.main-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.main-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.promo-quote {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    text-align: right;
+    background: rgba(27, 138, 61, 0.8);
+    padding: 20px 25px;
+    border-radius: 8px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.promo-quote p {
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-shadow: none;
+}
+
+.promo-quote span {
+    font-size: 1rem;
+    opacity: 0.9;
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Multi-image slides styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    height: 100%;
+    background-color: #1b8a3d !important;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white !important;  /* Changed from #1b8a3d to white */
+    border: 5px solid #1b8a3d;  /* Added border for definition */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item h3 {
+    color: #1b8a3d !important;  /* Changed from white to #1b8a3d */
+    font-size: 1.5rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.grid-item .description p {
+    color: #1b8a3d !important;  /* Changed from white to #1b8a3d */
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    background-color: white !important;  /* Changed from #1b8a3d to white */
+    box-shadow: 0 8px 25px rgba(27, 138, 61, 0.3);
+}
+
+
+/* Enhanced Modern Design Styles */
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced header animations */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Modern nav links animation */
+.nav-links li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Enhanced product cards */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(27, 138, 61, 0.1), rgba(27, 138, 61, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced industry boxes */
+.industry-box {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.industry-box:hover {
+    transform: translateY(-10px);
+}
+
+.circle-icon {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.circle-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.circle-icon:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced slider navigation */
+.slider-nav button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.slider-nav button:hover {
+    transform: scale(1.1);
+    background: rgba(27, 138, 61, 0.8);
+}
+
+/* Enhanced footer */
+.contact-grid {
+    position: relative;
+    background: linear-gradient(135deg, rgba(27, 138, 61, 0.9), rgba(27, 138, 61, 0.8));
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-item {
+    color: white;
+}
+
+.contact-item h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item i {
+    margin-right: 8px;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Modern scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1b8a3d;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #157033;
+}
+
+/* Page transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Enhanced text shadows for headings */
+h2, h3 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Card hover effects */
+.feature-products .product-card {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: perspective(1000px) rotateX(0deg);
+    transition: all 0.3s ease;
+}
+
+.feature-products .product-card:hover {
+    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Enhanced Design Elements */
+
+/* Glassmorphism effect for navigation */
+.top-nav {
+    background: rgba(27, 138, 61, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modern gradient borders */
+.grid-item {
+    position: relative;
+    border: none;
+    background: linear-gradient(145deg, rgba(27, 138, 61, 0.8), rgba(27, 138, 61, 0.9));
+}
+
+.grid-item::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, #1b8a3d, #25bb54, #1b8a3d);
+    border-radius: 14px;
+    animation: borderGlow 3s ease infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Enhanced text animations */
+.main-text h2 {
+    animation: slideInRight 1s ease-out;
+}
+
+.main-text p {
+    animation: slideInRight 1s ease-out 0.3s backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Modern card designs */
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-card img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;  /* Added white background for product images */
+    padding: 10px;  /* Added padding to create space between image and background */
+}
+
+.product-card:hover img {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+
+.circle-icon {
+    background: linear-gradient(135deg, #1b8a3d, #25bb54);
+    box-shadow: 0 8px 32px rgba(27, 138, 61, 0.3);
+}
+
+/* Floating animation for icons */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.circle-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced footer design */
+footer {
+    background: linear-gradient(135deg, #1b8a3d, #157033);
+    color: white;
+}
+
+.contact-grid {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+/* Modern button styles */
+.slider-nav button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Shine effect for images */
+.product-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.product-card:hover::after {
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* Enhanced dropdown menu */
+.dropdown-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(27, 138, 61, 0.2);
+    transform-origin: top;
+    animation: dropdownAppear 0.3s ease;
+}
+
+@keyframes dropdownAppear {
+    from {
+        opacity: 0;
+        transform: scaleY(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* Text gradient effect */
+.feature-products {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.feature-products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1b8a3d;
+    font-size: 2.5rem;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.industry-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.industry-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(27, 138, 61, 0.15);
+}
+
+.industry-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background-color: white;  /* Added white background for industry images */
+    padding: 10px;  /* Added padding to create space between image and background */
+}
+
+.industry-item h3 {
+    color: #1b8a3d;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.industry-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feature-products h2 {
+    background: linear-gradient(45deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.loading {
+    animation: pulse 2s infinite;
+}
+
+.industries-we-work {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.industries-we-work h2 {
+    color: #1b8a3d;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.industry-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    place-items: center;
+}
+
+.industry-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.circle-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #1b8a3d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  /* Icon color remains white */
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+.industry-box p {
+    color: #1b8a3d;  /* Changed text color to green */
+    font-weight: 500;
+}
+/* Table styles */
+.grid-item table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+}
+
+.grid-item table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.grid-item table td {
+    padding: 3px 6px;
+}
+
+.grid-item table td:first-child {
+    color: #333;
+    width: 35%;
+}
+
+.grid-item table td:last-child {
+    color: #333;
+}
+
+.grid-item .description {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: none;
+}
